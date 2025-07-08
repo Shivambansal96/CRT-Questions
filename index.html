@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Questions Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="question-area">
+      <span id="question-number"></span>
+      <h2 id="question-title"></h2>
+      <div id="question-description"></div>
+      <div id="question-input-format"></div>
+      <div id="question-output-format"></div>
+      <div id="question-example"></div>
+      <button id="done-btn">Done</button>
+      <div id="done-message" style="display:none;">Question marked as completed!</div>
+      <div id="nav-buttons">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+      </div>
+    </div>
+    <div id="sidebar">
+      <div id="sidebar-toggle">
+        <span id="sidebar-icon">&#9776;</span>
+      </div>
+      <div id="sidebar-overlay" class="hidden"></div>
+      <div id="sidebar-panel" class="hidden">
+        <div id="question-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 

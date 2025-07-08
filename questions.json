@@ -1,0 +1,212 @@
+{
+    "problems": [
+      {
+        "id": 1,
+        "title": "Reverse a number",
+        "description": "Reverse the digits of an integer.",
+        "input_format": "An integer number.",
+        "output_format": "Reversed integer.",
+        "example": {
+          "input": 648,
+          "output": 846
+        }
+      },
+      {
+        "id": 2,
+        "title": "Palindrome Number",
+        "leetcode": 9,
+        "description": "Determine whether an integer is a palindrome without converting it to a string.",
+        "input_format": "x: Integer",
+        "output_format": "Boolean: True if x is a palindrome, else False",
+        "example": {
+          "input": 121,
+          "output": true
+        }
+      },
+      {
+        "id": 3,
+        "title": "Two Sum",
+        "leetcode": 1,
+        "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to the target.",
+        "input_format": "nums: List of integers, target: Integer",
+        "output_format": "List containing two indices [i, j]",
+        "example": {
+          "input": {
+            "nums": [2, 7, 11, 15],
+            "target": 9
+          },
+          "output": [0, 1]
+        }
+      },
+      {
+        "id": 4,
+        "title": "Valid Parentheses",
+        "leetcode": 20,
+        "description": "Check if the input string containing '(', ')', '{', '}', '[' and ']' is valid.",
+        "input_format": "s: String containing only brackets",
+        "output_format": "Boolean: True if valid, else False",
+        "example": {
+          "input": "({[]})",
+          "output": true
+        }
+      },
+      {
+        "id": 5,
+        "title": "3Sum",
+        "leetcode": 15,
+        "description": "Find all unique triplets in the array which give the sum of zero.",
+        "input_format": "nums: List of integers",
+        "output_format": "List of lists, each containing 3 integers",
+        "example": {
+          "input": [-1, 0, 1, 2, -1, -4],
+          "output": [[-1, -1, 2], [-1, 0, 1]]
+        }
+      },
+      {
+        "id": 6,
+        "title": "Write a function: Leap Year",
+        "description": "Determine whether a given year is a leap year. A year is leap if divisible by 4 and if divisible by 100 then also by 400.",
+        "input_format": "A single integer year.",
+        "output_format": "Boolean: True if leap year, else False",
+        "examples": [
+          {"input": 2000, "output": true},
+          {"input": 1900, "output": false},
+          {"input": 1990, "output": false}
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Nested List: Second Lowest Grade",
+        "description": "Given names and grades for N students, print names with the second lowest grade alphabetically.",
+        "input_format": "First line N, then N lines with name and grade.",
+        "output_format": "Names of students with second lowest grade, one per line.",
+        "example": {
+          "input": [
+            6,
+            "Alice", 50.0,
+            "Bob", 45.5,
+            "Charlie", 45.5,
+            "David", 55.0,
+            "Eve", 60.0,
+            "Frank", 50.0
+          ],
+          "output": ["Alice", "Frank"]
+        }
+      },
+      {
+        "id": 8,
+        "title": "Finding the Percentage",
+        "description": "Given names and marks of N students, compute the average marks for a queried student rounded to 2 decimals.",
+        "input_format": "First line N, next N lines with student name and marks, last line queried student name.",
+        "output_format": "Average marks rounded to 2 decimals.",
+        "example": {
+          "input": [
+            3,
+            "Krishna 67 68 69",
+            "Arjun 70 98 63",
+            "Malika 52 56 60",
+            "Malika"
+          ],
+          "output": "56.00"
+        }
+      },
+      {
+        "id": 9,
+        "title": "Python Lists",
+        "description": "Perform various list operations based on commands.",
+        "input_format": "First line N commands, next N lines with commands.",
+        "output_format": "Print the list after each print command.",
+        "example": {
+          "input": [
+            12,
+            "insert 0 5",
+            "insert 1 10",
+            "insert 0 6",
+            "print",
+            "remove 6",
+            "append 9",
+            "append 1",
+            "print",
+            "sort",
+            "print",
+            "pop",
+            "reverse",
+            "print"
+          ],
+          "output": [
+            [6, 5, 10],
+            [5, 10, 9, 1],
+            [1, 5, 9, 10],
+            [9, 5, 1]
+          ]
+        }
+      },
+      {
+        "id": 10,
+        "title": "Python Mutations",
+        "description": "Mutate a string by replacing the character at a given index.",
+        "input_format": "First line: string S, second line: index and character separated by space.",
+        "output_format": "Print mutated string.",
+        "example": {
+          "input": ["datascience", "4 X"],
+          "output": "dataXcience"
+        }
+      },
+      {
+        "id": 11,
+        "title": "Capitalize!",
+        "description": "Capitalize the first letter of each word in a string.",
+        "input_format": "A single line string S.",
+        "output_format": "Print string with each word capitalized.",
+        "example": {
+          "input": "python is fun to learn",
+          "output": "Python Is Fun To Learn"
+        }
+      },
+      {
+        "id": 12,
+        "title": "Find the Missing Number",
+        "description": "Find the missing number from a list containing n distinct numbers from 0 to n.",
+        "input_format": "List of integers nums with length n.",
+        "output_format": "The missing integer.",
+        "example": {
+          "input": [3, 0, 1],
+          "output": 2
+        }
+      },
+      {
+        "id": 13,
+        "title": "Count Number of Digits in an Integer",
+        "description": "Count digits in an integer without converting it to string.",
+        "input_format": "An integer num.",
+        "output_format": "Count of digits.",
+        "example": {
+          "input": 12345,
+          "output": 5
+        }
+      },
+      {
+        "id": 14,
+        "title": "Find the First Non-Repeating Character",
+        "description": "Find the first character in a string that does not repeat. Return '_' if none exists.",
+        "input_format": "A string s.",
+        "output_format": "First non-repeating character or '_'",
+        "example": {
+          "input": "swiss",
+          "output": "w"
+        }
+      },
+      {
+        "id": 15,
+        "title": "Check if Two Strings are Anagrams",
+        "description": "Check if two strings are anagrams of each other.",
+        "input_format": "Two strings s1 and s2.",
+        "output_format": "True if anagrams, else False.",
+        "example": [
+          {"input": ["listen", "silent"], "output": true},
+          {"input": ["hello", "bello"], "output": false}
+        ]
+      }
+    ]
+  }
+  
