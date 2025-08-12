@@ -1,168 +1,198 @@
-# Coding Questions Viewer
+# CRT Interview Questions
 
-A clean, responsive web app to browse, track, and navigate coding problems from a JSON file. Includes a questions sidebar, progress tracking via localStorage, a creator info modal (via FAB), and a prominent WhatsApp channel CTA.
+## Description
+A clean, responsive web application designed to help students practice CRT (Campus Recruitment Training) interview questions. The app provides an intuitive interface to browse, track progress, and navigate through coding problems from a JSON file. Features include a questions sidebar, progress tracking via localStorage, a creator info modal accessible via a floating action button (FAB), and a prominent WhatsApp channel call-to-action.
 
-## Table of Contents
-- [Features](#features)
-- [Live Preview](#live-preview)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Data Format](#data-format)
-- [Customization](#customization)
-- [Screenshots](#screenshots)
-- [Accessibility](#accessibility)
-- [Performance Tips](#performance-tips)
-- [SEO Tips](#seo-tips)
-- [Browser Support](#browser-support)
-- [Roadmap](#roadmap)
-- [FAQ](#faq)
-- [Contributing](#contributing)
-- [License](#license)
+## Hosted Link
+🌐 **Live Website**: [https://crt-interview-questions.vercel.app](https://crt-interview-questions.vercel.app)
 
 ## Features
-- Question browsing with Previous/Next navigation
-- Problem details: title, description, input/output formats, example(s)
-- Mark-as-Done with persistence in `localStorage`
-- Sidebar with quick question list and completion state
-- Responsive design for desktop and mobile
-- Creator modal (via FAB) with social links + Instagram handle link
-- Prominent WhatsApp channel call‑to‑action
-- Simple, self‑contained static site (just HTML/CSS/JS)
-
-## Live Preview
-Most browsers restrict `fetch` from `file://` to local JSON. Run a local server:
-
-- Using Node (npx):
-```bash
-npx serve .
-# open the URL that prints (e.g., http://localhost:3000)
-```
-
-- Using Python 3:
-```bash
-python -m http.server 8000
-# open http://localhost:8000
-```
-
-- VS Code: use the Live Server extension.
+- **Question Navigation**: Browse through problems with Previous/Next buttons
+- **Problem Details**: View title, description, input/output formats, and examples
+- **Progress Tracking**: Mark questions as "Done" with localStorage persistence
+- **Smart Sidebar**: Quick question list with completion status indicators
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Creator Modal**: Access creator information and social links via FAB button
+- **WhatsApp Channel**: Prominent call-to-action to join the creator's channel
+- **Self-Contained**: Pure HTML/CSS/JavaScript - no external dependencies
 
 ## Tech Stack
-- HTML5, CSS3 (responsive, mobile-first)
-- Vanilla JavaScript (no frameworks)
-- LocalStorage for progress persistence
-- Inline SVG icons for crisp, lightweight graphics
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Styling**: Responsive design with mobile-first approach
+- **Storage**: LocalStorage for progress persistence
+- **Icons**: Inline SVG for crisp, lightweight graphics
+- **Hosting**: Vercel for deployment and CDN
 
-## Architecture
-- `script.js` loads `questions.json` with `fetch`, renders the current problem, and manages navigation/completion state.
-- A right-side overlay/slide-in panel lists all questions with completion marks.
-- A FAB opens a creator modal with social links and a WhatsApp CTA (rendered in `index.html`, styled via `style.css`).
+## Getting Started
+
+### Prerequisites
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Local development server (for development)
+
+### Local Development
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd CodingQuestions
+   ```
+
+2. **Run locally** (required due to fetch restrictions)
+   ```bash
+   # Using Node.js
+   npx serve .
+   
+   # Using Python
+   python -m http.server 8000
+   
+   # Using VS Code Live Server extension
+   ```
+
+3. **Open in browser**
+   - Navigate to the URL shown by your local server
+   - Start practicing CRT interview questions!
 
 ## Project Structure
 ```
 CodingQuestions/
-  ├─ index.html        # App markup, creator modal, social links, WhatsApp CTA
-  ├─ style.css         # Layout, theming, responsive styles
-  ├─ script.js         # Logic (load/render questions, nav, done state)
-  ├─ questions.json    # Problems data
-  └─ assets/
-      └─ Creator.png   # Creator avatar in the modal (ensure this file exists)
+├── index.html          # Main application markup and creator modal
+├── style.css           # Responsive styling and animations
+├── script.js           # Application logic and question management
+├── questions.json      # CRT interview questions data
+├── robots.txt          # Search engine indexing instructions
+├── sitemap.xml         # Site structure for search engines
+├── README.md           # Project documentation
+└── assets/
+    └── Creator.png     # Creator avatar image
 ```
 
 ## Data Format
-The app expects a root `problems` array. Each problem supports these fields:
+The application expects a structured JSON format for questions:
+
 ```json
 {
   "problems": [
     {
       "id": 1,
-      "title": "Two Sum",
-      "description": "Given an array...",
+      "title": "Two Sum Problem",
+      "description": "Given an array of integers...",
       "input_format": "n, nums[], target",
       "output_format": "i, j",
-      "example": { "input": "[2,7,11,15], target=9", "output": "0 1" }
-      // alternatively, you can use "examples": [ ... ]
+      "example": {
+        "input": "[2,7,11,15], target=9",
+        "output": "0 1"
+      }
     }
   ]
 }
 ```
-Notes:
-- `id` should be unique and numeric; it powers navigation and completion storage.
-- Provide either `example` (single object) or `examples` (array). The renderer supports both.
 
 ## Customization
-- **Creator details & links**: In `index.html`, edit the anchors for GitHub, LinkedIn, LeetCode, Portfolio, WhatsApp channel, and the Instagram handle link.
-- **Avatar**: Replace `assets/Creator.png` or update its `src` path in `index.html`.
-- **WhatsApp CTA**: Tweak styles in `.whatsapp-channel`, `.whatsapp-cta`, `.whatsapp-icon` in `style.css`.
-- **Colors/typography**: Adjust in `style.css`. Example small tweaks:
-```css
-/* Button brand color */
-#nav-buttons button { background: #1976d2; }
-#nav-buttons button:active { background: #0d47a1; }
 
-/* Title weight/size */
-#question-title { font-size: 2.6rem; font-weight: 800; }
-```
-- **Sidebar behavior**: The open/close logic lives in `script.js` (`showSidebar`, `hideSidebar`).
-- **Done state**: Stored in `localStorage` under `completedQuestions` (array of `id`s).
+### Creator Information
+Update the creator details in `index.html`:
+- Name and handle
+- Social media links (GitHub, LinkedIn, LeetCode, Portfolio)
+- WhatsApp channel link
+- Instagram handle
 
-## Screenshots
-Add your own screenshots or GIFs here to showcase the UI.
+### Styling
+Modify `style.css` to customize:
+- Color scheme and typography
+- WhatsApp CTA appearance
+- Modal and sidebar styling
+- Responsive breakpoints
 
-- Questions view (desktop)
-- Sidebar open (desktop/mobile)
-- Creator modal + WhatsApp CTA
+### Questions Data
+Edit `questions.json` to:
+- Add new CRT interview questions
+- Modify existing problem details
+- Update examples and formats
 
-You can capture with your OS tools, then place files under `assets/` and reference them here:
-```markdown
-![Questions View](assets/screenshot-questions.png)
-![Creator Modal](assets/screenshot-modal.png)
-```
-
-## Accessibility
-- Focus-visible outline on key interactive elements (e.g., WhatsApp CTA)
-- Sufficient color contrast for primary actions
-- Consider adding ARIA labels or roles if you expand the UI
-
-## Performance Tips
-- Keep `questions.json` reasonably sized; paginate or lazy-load if it grows large.
-- Prefer SVGs (already used) over heavy images for icons.
-- Compress images in `assets/` (e.g., `Creator.png`).
-- Host on a static CDN (Vercel/Netlify/GitHub Pages) for better caching and latency.
-
-## SEO Tips
-- Add a meta description in `index.html`:
-```html
-<meta name="description" content="Browse and track coding problems with a clean, responsive viewer." />
-```
-- Add Open Graph tags for social sharing (title, description, preview image).
+## SEO & Discoverability
+- **Meta Tags**: Optimized for search engines
+- **Open Graph**: Enhanced social media sharing
+- **Schema Markup**: FAQ structured data for rich results
+- **Sitemap**: XML sitemap for search engine indexing
+- **Robots.txt**: Proper crawling instructions
 
 ## Browser Support
-- Chrome, Edge, Safari, Firefox (latest 2 versions)
-- Mobile browsers on iOS/Android
+- ✅ Chrome (latest 2 versions)
+- ✅ Firefox (latest 2 versions)
+- ✅ Safari (latest 2 versions)
+- ✅ Edge (latest 2 versions)
+- ✅ Mobile browsers (iOS/Android)
 
-## Roadmap
-- Optional keyboard shortcuts for prev/next
-- Search/filter in the sidebar
-- Tags/difficulty display and filtering
-- Export/Import progress (JSON)
-- Theme toggle (light/dark)
+## Deployment
+The application is currently deployed on Vercel. To deploy elsewhere:
 
-## FAQ
-- "The questions don’t load when I open `index.html` directly."
-  - Run a local server (see Live Preview). Browsers block `fetch` to local files.
-- "My avatar doesn’t show up."
-  - Ensure `assets/Creator.png` exists or update the path.
-- "Where is the done state saved?"
-  - In `localStorage` as `completedQuestions` (array of problem IDs).
+1. **GitHub Pages**
+   - Push to GitHub repository
+   - Enable Pages in repository settings
+   - Select source branch and folder
+
+2. **Netlify**
+   - Drag and drop project folder
+   - Configure build settings if needed
+
+3. **Custom Domain**
+   - Update `robots.txt` and `sitemap.xml` URLs
+   - Modify canonical links in `index.html`
 
 ## Contributing
-PRs and suggestions are welcome! For larger changes, please open an issue describing the enhancement first.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork and clone the repo
-2. Create a feature branch
-3. Make your changes (keep code style consistent)
-4. Open a Pull Request with a clear description and screenshots if UI changes
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Roadmap
+- [ ] Keyboard shortcuts for navigation
+- [ ] Search and filter functionality
+- [ ] Question difficulty ratings
+- [ ] Progress analytics and statistics
+- [ ] Dark/Light theme toggle
+- [ ] Export progress functionality
+- [ ] Question categories and tags
+
+## FAQ
+
+**Q: Why can't I open the HTML file directly?**
+A: Browsers block `fetch` requests to local files. Use a local server as described in Getting Started.
+
+**Q: How is my progress saved?**
+A: Progress is stored in your browser's localStorage under the key `completedQuestions`.
+
+**Q: Can I add my own questions?**
+A: Yes! Edit `questions.json` to add, modify, or remove CRT interview questions.
+
+**Q: Is this mobile-friendly?**
+A: Absolutely! The design is responsive and optimized for all device sizes.
+
+## Troubleshooting
+
+### Common Issues
+- **Questions not loading**: Ensure you're running a local server
+- **Avatar not showing**: Check that `assets/Creator.png` exists
+- **Progress not saving**: Verify localStorage is enabled in your browser
+
+### Performance Tips
+- Keep `questions.json` reasonably sized
+- Use compressed images for avatars
+- Consider pagination for large question sets
+
+## Credits
+- **Created by**: [Shivam Bansal](https://www.instagram.com/shine_beyond_syntax)
+- **GitHub**: [@Shivambansal96](https://github.com/Shivambansal96)
+- **LinkedIn**: [Shivam Bansal](https://www.linkedin.com/in/shivam-bansal-a99269275/)
+- **LeetCode**: [@Shivambansa96](https://leetcode.com/u/Shivambansa96/)
+- **Portfolio**: [Personal Website](https://sb-personal-portfolio.vercel.app/)
+- **WhatsApp Channel**: [Join Here](https://whatsapp.com/channel/0029Vb74kBaL2ATzZBnRka19)
 
 ## License
-© 2025 Shivam Bansal. Personal/portfolio use permitted. Contact the author for reuse or redistribution permissions.
+© 2025 Shivam Bansal. This project is licensed for personal and educational use. For commercial use or redistribution, please contact the author.
+
+---
+
+**Star this repository if you find it helpful! ⭐**
