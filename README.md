@@ -4,7 +4,7 @@
 A clean, responsive web application designed to help students practice CRT (Campus Recruitment Training) interview questions. The app provides an intuitive interface to browse, track progress, and navigate through coding problems from a JSON file. Features include a questions sidebar, progress tracking via localStorage, a creator info modal accessible via a floating action button (FAB), and a prominent WhatsApp channel call-to-action.
 
 ## Hosted Link
-🌐 **Live Website**: [https://crt-interview-questions.vercel.app](https://crt-interview-questions.vercel.app)
+🌐 **Live Website**: [Website is live](https://crt-interview-questions.vercel.app)
 
 ## Features
 - **Question Navigation**: Browse through problems with Previous/Next buttons
