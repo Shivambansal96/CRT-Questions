@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crt-interview-questions.vercel.app/sitemap.xml

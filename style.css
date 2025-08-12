@@ -803,6 +803,22 @@ body {
   }
 } 
 
+/* Optional: styles for SEO heading/intro if added */
+.seo-intro {
+  margin-bottom: 16px;
+  color: #445266;
+}
+.seo-intro h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  color: #2d3a4b;
+}
+.seo-intro p {
+  margin: 0;
+  font-size: 1rem;
+  color: #5c6b7a;
+}
+
 
 
 
