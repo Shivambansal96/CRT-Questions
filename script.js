@@ -121,4 +121,33 @@ document.getElementById('next-btn').onclick = function() {
   }
 };
 
+// FAB Button and Modal Functionality
+function showCreatorModal() {
+  const modal = document.getElementById('creator-modal');
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function hideCreatorModal() {
+  const modal = document.getElementById('creator-modal');
+  modal.classList.add('hidden');
+  document.body.style.overflow = ''; // Restore scrolling
+}
+
+// FAB button click event
+document.getElementById('fab').onclick = showCreatorModal;
+
+// Modal close button click event
+document.querySelector('.modal-close').onclick = hideCreatorModal;
+
+// Close modal when clicking on overlay
+document.querySelector('.modal-overlay').onclick = hideCreatorModal;
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    hideCreatorModal();
+  }
+});
+
 window.onload = loadQuestions; 

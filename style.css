@@ -320,4 +320,495 @@ body {
   #question-list {
     padding: 24px 0 0 0;
   }
+}
+
+/* Elegant Attribution */
+#attribution {
+  margin-top: 40px;
+  padding: 24px 0;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+#attribution span {
+  line-height: 1.4;
+}
+
+#attribution strong {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+#attribution .handle {
+  color: #4caf50;
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  #attribution {
+    margin-top: 32px;
+    padding: 20px 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Subtle Attribution */
+#attribution {
+  margin-top: 16px;
+  padding: 8px 0;
+  text-align: center;
+  color: #999;
+  font-size: 0.75rem;
+  border-top: none;
+  display: block;
+}
+
+#attribution span {
+  line-height: 1.2;
+}
+
+#attribution strong {
+  color: #666;
+  font-weight: 500;
+}
+
+#attribution .handle {
+  color: #999;
+  font-weight: 400;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  #attribution {
+    margin-top: 12px;
+    padding: 6px 0;
+    font-size: 0.7rem;
+  }
+}
+
+/* Header Attribution */
+#attribution {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  color: #bbb;
+  font-size: 0.7rem;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#attribution span {
+  line-height: 1.2;
+}
+
+#attribution strong {
+  color: #1976d2;
+  font-weight: 500;
+}
+
+#attribution .handle {
+  color: #4caf50;
+  font-weight: 400;
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  #attribution {
+    top: 12px;
+    left: 16px;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+}
+
+/* FAB Button */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #1976d2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.fab:hover {
+  background: #1565c0;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+}
+
+/* Updated Icon Styles for SVG */
+.fab-icon {
+  font-size: 32px;
+  color: white;
+  user-select: none;
+}
+
+.avatar-icon {
+  align-self: center;
+  /* font-size: 80px; */
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  color: #1976d2;
+  display: block;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 90%;
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2001;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2d3a4b;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.creator-avatar {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.creator-info {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.creator-name {
+  margin: 0 0 8px 0;
+  color: #2d3a4b;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.creator-handle {
+  margin: 0 0 16px 0;
+  color: #1976d2;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.handle-link {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.handle-link:hover {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+.creator-description {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* WhatsApp Channel Prominent Section */
+.whatsapp-channel {
+  text-align: center;
+  margin: 20px 0;
+  padding: 14px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  /* New: animate gradient and hover polish */
+  background-size: 180% 180%;
+  transition: background-position 400ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+
+/* New: container hover with gradient shift and stronger glow */
+.whatsapp-channel:hover {
+  background-position: 100% 0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* New: subtle scale and text polish on hover */
+.whatsapp-cta:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* New: icon glow + scale on hover */
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.whatsapp-cta:hover .whatsapp-icon {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+/* New: text subtle highlight */
+.whatsapp-cta span {
+  color: white;
+  font-weight: 600;
+  transition: text-shadow 200ms ease, letter-spacing 200ms ease;
+}
+
+.whatsapp-cta:hover span {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.12), 0 0 10px rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.2px;
+}
+
+/* New: accessible focus style */
+.whatsapp-cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.social-links {
+  text-align: center;
+}
+
+.social-links h5 {
+  margin: 0 0 16px 0;
+  color: #2d3a4b;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.social-links h5 {
+  margin: 0 0 16px 0;
+  color: #2d3a4b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  animation: connectPulse 2s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes connectPulse {
+  0% {
+    transform: scale(1);
+    color: #2d3a4b;
+  }
+  50% {
+    transform: scale(1.05);
+    color: #1976d2;
+  }
+  100% {
+    transform: scale(1);
+    color: #2d3a4b;
+  }
+}
+
+/* Alternative animation option - you can choose which one you prefer */
+.social-links h5.typing-effect {
+  overflow: hidden;
+  border-right: 2px solid #1976d2;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #1976d2; }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.social-link:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+}
+
+.social-link:hover .social-icon {
+  color: white;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+  transition: color 0.2s;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .fab {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .fab-icon {
+    font-size: 20px;
+  }
+  
+  .modal-content {
+    width: 95%;
+    max-height: 500px;
+    overflow: hidden;
+  }
+  
+  .modal-header {
+    padding: 20px 20px 16px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .avatar-icon {
+    font-size: 56px;
+  }
+  
+  .creator-name {
+    font-size: 1.4rem;
+  }
 } 
+
+
+
+
+
+ 
+
+ 
+
+ 
